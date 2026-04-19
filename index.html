@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Lapor KAKAK - Wasnaker Karimun</title>
+    <title>Portal Lapor KAKAK - UPTD Wasnaker Karimun</title>
+    <meta http-equiv="refresh" content="2;url=https://script.google.com/macros/s/AKfycbyVQ645oj9x5JhoL6h4wTWsYYA5CNah4pVo2xLmxo_-pWZbzxLGlpOLkB1X_6RHL8dO/exec">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -43,79 +44,86 @@
 
         .card {
             position: relative;
-            background: rgba(16, 33, 65, 0.7);
+            background: rgba(16, 33, 65, 0.85);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(0, 255, 242, 0.2);
-            border-radius: 20px;
+            border: 1px solid rgba(0, 255, 242, 0.3);
+            border-radius: 24px;
             padding: 40px;
             width: 90%;
-            max-width: 500px;
+            max-width: 600px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.5), inset 0 0 20px rgba(0, 255, 242, 0.1);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 0 30px rgba(0, 255, 242, 0.1);
             z-index: 1;
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-provinsi {
+            width: 90px;
+            height: auto;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
 
         .header-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--cyan);
-            letter-spacing: 3px;
-            margin-bottom: 5px;
-            text-shadow: 0 0 10px var(--cyan);
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-shadow: 0 0 15px var(--cyan);
+            text-transform: uppercase;
         }
 
         .subtitle {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--gold);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            font-weight: 700;
+            line-height: 1.4;
             text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .robot-icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); filter: drop-shadow(0 0 5px var(--cyan)); }
-            50% { transform: scale(1.1); filter: drop-shadow(0 0 20px var(--cyan)); }
-            100% { transform: scale(1); filter: drop-shadow(0 0 5px var(--cyan)); }
+            letter-spacing: 1.5px;
         }
 
         .description {
             line-height: 1.6;
-            margin-bottom: 35px;
-            color: #8892b0;
+            margin-bottom: 30px;
+            color: #cbd5e1;
+            font-size: 1rem;
+            font-weight: 300;
         }
 
-        .btn-main {
-            display: inline-block;
-            background: transparent;
-            color: var(--cyan);
-            border: 2px solid var(--cyan);
-            padding: 15px 40px;
-            font-family: 'Orbitron', sans-serif;
-            font-weight: bold;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: 0.3s;
-            position: relative;
+        .loading-bar-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
             overflow: hidden;
+            margin-bottom: 20px;
         }
 
-        .btn-main:hover {
+        .loading-progress {
+            width: 0%;
+            height: 100%;
             background: var(--cyan);
-            color: var(--deep-navy);
-            box-shadow: 0 0 30px var(--cyan);
+            box-shadow: 0 0 10px var(--cyan);
+            animation: loadProgress 2s linear forwards;
+        }
+
+        @keyframes loadProgress {
+            from { width: 0%; }
+            to { width: 100%; }
         }
 
         .footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #495670;
+            margin-top: 30px;
+            font-size: 0.75rem;
+            color: #94a3b8;
             border-top: 1px solid rgba(255,255,255,0.1);
             padding-top: 20px;
         }
@@ -126,16 +134,24 @@
 <body>
 
     <div class="card">
-        <div class="robot-icon">🤖</div>
-        <h1 class="header-title">LAPOR KAKAK</h1>
-        <p class="subtitle">UPTD Pengawasan Ketenagakerjaan Kabupaten Karimun • Provinsi Kepulauan Riau</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Coat_of_arms_of_Riau_Islands.png" alt="Logo Kepri" class="logo-provinsi">
+        
+        <h1 class="header-title">Lapor KAKAK</h1>
+        
+        <p class="subtitle">
+            Sistem Digital Pengawasan Ketenagakerjaan<br>
+            UPTD Pengawasan Ketenagakerjaan Kabupaten Karimun<br>
+            Dinas Tenaga Kerja dan Transmigrasi Provinsi Kepulauan Riau
+        </p>
         
         <p class="description">
-            Sistem Digitalisasi Pelaporan Keselamatan dan Kesehatan Kerja (K3). 
-            Pantau dan laporkan aktivitas kerja secara presisi dan terverifikasi otomatis.
+            Laporan Kecelakaan Kerja & Penyakit Akibat Kerja terintegrasi, aman, dan real-time.
         </p>
 
-        <a href="https://script.google.com/macros/s/AKfycbyVQ645oj9x5JhoL6h4wTWsYYA5CNah4pVo2xLmxo_-pWZbzxLGlpOLkB1X_6RHL8dO/exec" class="btn-main">MULAI LAPORAN</a>
+        <div class="loading-bar-container">
+            <div class="loading-progress"></div>
+        </div>
+        <p style="font-size: 0.7rem; color: var(--cyan); letter-spacing: 2px;">MENGHUBUNGKAN KE SERVER...</p>
 
         <div class="footer">
             Dikembangkan oleh:<br>
