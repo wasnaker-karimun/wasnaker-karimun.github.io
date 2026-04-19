@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lapor KAKAK - Wasnaker Karimun</title>
     
-    <meta http-equiv="refresh" content="7;url=https://script.google.com/macros/s/AKfycbyVQ645oj9x5JhoL6h4wTWsYYA5CNah4pVo2xLmxo_-pWZbzxLGlpOLkB1X_6RHL8dO/exec">
+    <meta http-equiv="refresh" content="5;url=https://script.google.com/macros/s/AKfycbyVQ645oj9x5JhoL6h4wTWsYYA5CNah4pVo2xLmxo_-pWZbzxLGlpOLkB1X_6RHL8dO/exec">
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
@@ -31,7 +31,7 @@
             background: radial-gradient(circle at center, #0f172a 0%, #060b13 100%);
         }
 
-        /* Efek Garis Pindai Monitor (Scanlines) */
+        /* Efek Garis Pindai Monitor */
         body::after {
             content: "";
             position: fixed;
@@ -43,15 +43,9 @@
             z-index: 10;
         }
 
-        /* Kartu Utama dengan Efek Denyut (Breathing Glow) */
-        @keyframes breathingGlow {
-            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 242, 0.1), inset 0 0 15px rgba(0, 255, 242, 0.05); border-color: rgba(0, 255, 242, 0.2); }
-            50% { box-shadow: 0 0 40px rgba(0, 255, 242, 0.3), inset 0 0 25px rgba(0, 255, 242, 0.1); border-color: rgba(0, 255, 242, 0.5); }
-        }
-
         .card {
             position: relative;
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 255, 242, 0.3);
@@ -61,14 +55,17 @@
             max-width: 650px;
             text-align: center;
             z-index: 1;
-            animation: breathingGlow 4s infinite ease-in-out;
+            box-shadow: 0 0 20px rgba(0, 255, 242, 0.1);
         }
 
         .logo-provinsi {
-            width: 85px;
+            width: 100px;
             height: auto;
             margin-bottom: 25px;
-            filter: drop-shadow(0 0 15px rgba(0, 255, 242, 0.4));
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
         }
 
         .header-title {
@@ -98,12 +95,6 @@
             letter-spacing: 1px;
         }
 
-        /* Container Loading */
-        .loading-section {
-            margin-top: 20px;
-            position: relative;
-        }
-
         .loading-bar {
             width: 100%;
             height: 6px;
@@ -117,24 +108,19 @@
         .progress-fill {
             width: 0%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
-            background-size: 200% 100%;
+            background: var(--cyan);
             box-shadow: 0 0 15px var(--cyan);
-            animation: loadMove 2.5s ease-in-out forwards, shimmer 1s infinite linear;
+            animation: loadMove 5s linear forwards;
         }
 
         @keyframes loadMove { from { width: 0%; } to { width: 100%; } }
-        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
         .status-text {
             font-family: 'Orbitron', sans-serif;
             font-size: 0.7rem;
             color: var(--cyan);
             letter-spacing: 3px;
-            animation: blink 1s infinite;
         }
-
-        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
 
         .footer {
             margin-top: 40px;
@@ -142,7 +128,6 @@
             color: #475569;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 20px;
-            letter-spacing: 1px;
         }
 
         .highlight { color: #cbd5e1; font-weight: bold; }
@@ -151,7 +136,6 @@
 <body>
 
     <div class="card">
-        <img src="https://kepriprov.go.id/assets/frontend/img/logo_kepri.png" alt="Logo Kepri" class="logo-provinsi">
         <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Coat_of_arms_of_Riau_Islands.png" alt="Logo Kepri" class="logo-provinsi">
         
         <h1 class="header-title">LAPOR KAKAK</h1>
@@ -172,7 +156,7 @@
             <div class="status-text">LOADING...</div>
         </div>
 
-       </div>
+    </div>
 
 </body>
 </html>
