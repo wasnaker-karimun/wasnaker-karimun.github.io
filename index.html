@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal Lapor KAKAK - UPTD Pengawasan Ketenagakerjaan Kabupaten Karimun</title>
+    <title>Lapor KAKAK - Wasnaker Karimun</title>
     
-    <meta http-equiv="refresh" content="2;url=https://script.google.com/macros/s/AKfycbyVQ645oj9x5JhoL6h4wTWsYYA5CNah4pVo2xLmxo_-pWZbzxLGlpOLkB1X_6RHL8dO/exec">
+    <meta http-equiv="refresh" content="2.5;url=https://script.google.com/macros/s/AKfycbyVQ645oj9x5JhoL6h4wTWsYYA5CNah4pVo2xLmxo_-pWZbzxLGlpOLkB1X_6RHL8dO/exec">
     
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --deep-navy: #0a192f;
+            --deep-navy: #060b13;
             --cyan: #00fff2;
-            --gold: #ffcc00;
-            --glass: rgba(255, 255, 255, 0.05);
+            --gold: #facc15;
+            --glass: rgba(0, 255, 242, 0.05);
         }
 
         body {
@@ -28,123 +28,122 @@
             align-items: center;
             min-height: 100vh;
             overflow: hidden;
-            background: radial-gradient(circle at center, #112240 0%, #0a192f 100%);
+            background: radial-gradient(circle at center, #0f172a 0%, #060b13 100%);
         }
 
-        /* Cyber Background Effect */
-        body::before {
+        /* Efek Garis Pindai Monitor (Scanlines) */
+        body::after {
             content: "";
-            position: absolute;
-            width: 200%;
-            height: 200%;
-            background-image: linear-gradient(var(--glass) 1px, transparent 1px), 
-                              linear-gradient(90deg, var(--glass) 1px, transparent 1px);
-            background-size: 50px 50px;
-            transform: perspective(500px) rotateX(60deg) translateY(-200px);
-            z-index: 0;
-            opacity: 0.3;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 255, 242, 0.02) 50%), 
+                        linear-gradient(90deg, rgba(255, 0, 0, 0.01), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.01));
+            background-size: 100% 3px, 3px 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        /* Kartu Utama dengan Efek Denyut (Breathing Glow) */
+        @keyframes breathingGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 255, 242, 0.1), inset 0 0 15px rgba(0, 255, 242, 0.05); border-color: rgba(0, 255, 242, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(0, 255, 242, 0.3), inset 0 0 25px rgba(0, 255, 242, 0.1); border-color: rgba(0, 255, 242, 0.5); }
         }
 
         .card {
             position: relative;
-            background: rgba(16, 33, 65, 0.85);
-            backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(20px);
             border: 1px solid rgba(0, 255, 242, 0.3);
-            border-radius: 24px;
-            padding: 40px;
+            border-radius: 30px;
+            padding: 50px 40px;
             width: 95%;
-            max-width: 600px;
+            max-width: 650px;
             text-align: center;
-            box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 0 30px rgba(0, 255, 242, 0.1);
             z-index: 1;
-            animation: slideUp 0.8s ease-out;
+            animation: breathingGlow 4s infinite ease-in-out;
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Pengaturan Logo Provinsi */
         .logo-provinsi {
-            width: 100px; /* Ukuran pas untuk HP & PC */
+            width: 85px;
             height: auto;
             margin-bottom: 25px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+            filter: drop-shadow(0 0 15px rgba(0, 255, 242, 0.4));
         }
 
         .header-title {
             font-family: 'Orbitron', sans-serif;
-            font-size: 1.8rem;
+            font-size: 2.2rem;
             color: var(--cyan);
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            text-shadow: 0 0 15px var(--cyan);
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(0, 255, 242, 0.6);
             text-transform: uppercase;
         }
 
-        .subtitle {
-            font-size: 0.85rem;
+        .subtitle-main {
+            font-size: 0.95rem;
             color: var(--gold);
-            margin-bottom: 25px;
-            font-weight: 700;
-            line-height: 1.5;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 1.5px;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
         }
 
-        .description {
+        .subtitle-office {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-bottom: 35px;
             line-height: 1.6;
-            margin-bottom: 30px;
-            color: #cbd5e1;
-            font-size: 1rem;
-            font-weight: 300;
+            letter-spacing: 1px;
         }
 
-        /* Loading Bar Animation */
-        .loading-bar-container {
+        /* Container Loading */
+        .loading-section {
+            margin-top: 20px;
+            position: relative;
+        }
+
+        .loading-bar {
             width: 100%;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 10px;
             overflow: hidden;
             margin-bottom: 15px;
+            border: 1px solid rgba(0, 255, 242, 0.2);
         }
 
-        .loading-progress {
+        .progress-fill {
             width: 0%;
             height: 100%;
-            background: var(--cyan);
-            box-shadow: 0 0 10px var(--cyan);
-            animation: loadProgress 2s linear forwards;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            background-size: 200% 100%;
+            box-shadow: 0 0 15px var(--cyan);
+            animation: loadMove 2.5s ease-in-out forwards, shimmer 1s infinite linear;
         }
 
-        @keyframes loadProgress {
-            from { width: 0%; }
-            to { width: 100%; }
-        }
+        @keyframes loadMove { from { width: 0%; } to { width: 100%; } }
+        @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
 
         .status-text {
-            font-size: 0.7rem; 
-            color: var(--cyan); 
-            letter-spacing: 2px; 
-            text-transform: uppercase;
-            margin-bottom: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            color: var(--cyan);
+            letter-spacing: 3px;
+            animation: blink 1s infinite;
         }
 
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
         .footer {
-            margin-top: 20px;
+            margin-top: 40px;
             font-size: 0.75rem;
-            color: #94a3b8;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #475569;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
             padding-top: 20px;
         }
 
-        .highlight { color: white; font-weight: bold; }
+        .highlight { color: #cbd5e1; font-weight: bold; }
     </style>
 </head>
 <body>
@@ -152,28 +151,28 @@
     <div class="card">
         <img src="https://kepriprov.go.id/assets/frontend/img/logo_kepri.png" alt="Logo Kepri" class="logo-provinsi">
         
-        <h1 class="header-title">Lapor KAKAK</h1>
+        <h1 class="header-title">LAPOR KAKAK</h1>
         
-        <p class="subtitle">
-            Sistem Digital Pengawasan Ketenagakerjaan<br>
+        <div class="subtitle-main">
+            SISTEM PELAPORAN KECELAKAAN KERJA<br>DAN PENYAKIT AKIBAT KERJA
+        </div>
+        
+        <div class="subtitle-office">
             UPTD Pengawasan Ketenagakerjaan Kabupaten Karimun<br>
             Dinas Tenaga Kerja dan Transmigrasi Provinsi Kepulauan Riau
-        </p>
-        
-        <p class="description">
-            Laporan Kecelakaan Kerja & Penyakit Akibat Kerja terintegrasi, aman, dan real-time.
-        </p>
-
-        <div class="loading-bar-container">
-            <div class="loading-progress"></div>
         </div>
-        <p class="status-text">Menghubungkan ke Sistem Pengawasan...</p>
+
+        <div class="loading-section">
+            <div class="loading-bar">
+                <div class="progress-fill"></div>
+            </div>
+            <div class="status-text">LOADING...</div>
+        </div>
 
         <div class="footer">
-            Dikembangkan oleh:<br>
-            <span class="highlight">UPTD Pengawasan Ketenagakerjaan Kabupaten Karimun<br>
-            Dinas Tenaga Kerja dan Transmigrasi Provinsi Kepulauan Riau</span><br>
-            Administrator Lapor KAKAK-Wasnaker Karimun
+            DIKEMBANGKAN OLEH:<br>
+            <span class="highlight">UPTD Pengawasan Ketenagakerjaan Kab. karimun</span><br>
+            Dinas Tenaga Kerja dan Transmigrasi Provinsi Kepulauan Riau
         </div>
     </div>
 
