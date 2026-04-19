@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal Lapor KAKAK - UPTD Wasnaker Karimun</title>
+    
     <meta http-equiv="refresh" content="2;url=https://script.google.com/macros/s/AKfycbyVQ645oj9x5JhoL6h4wTWsYYA5CNah4pVo2xLmxo_-pWZbzxLGlpOLkB1X_6RHL8dO/exec">
+    
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --deep-navy: #0a192f;
@@ -50,7 +53,7 @@
             border: 1px solid rgba(0, 255, 242, 0.3);
             border-radius: 24px;
             padding: 40px;
-            width: 90%;
+            width: 95%;
             max-width: 600px;
             text-align: center;
             box-shadow: 0 25px 50px rgba(0,0,0,0.6), inset 0 0 30px rgba(0, 255, 242, 0.1);
@@ -63,11 +66,15 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Pengaturan Logo Provinsi */
         .logo-provinsi {
-            width: 90px;
+            width: 100px; /* Ukuran pas untuk HP & PC */
             height: auto;
-            margin-bottom: 20px;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+            margin-bottom: 25px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
         }
 
         .header-title {
@@ -75,7 +82,7 @@
             font-size: 1.8rem;
             color: var(--cyan);
             letter-spacing: 2px;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             text-shadow: 0 0 15px var(--cyan);
             text-transform: uppercase;
         }
@@ -85,9 +92,9 @@
             color: var(--gold);
             margin-bottom: 25px;
             font-weight: 700;
-            line-height: 1.4;
+            line-height: 1.5;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1.2px;
         }
 
         .description {
@@ -98,13 +105,14 @@
             font-weight: 300;
         }
 
+        /* Loading Bar Animation */
         .loading-bar-container {
             width: 100%;
             height: 4px;
             background: rgba(255,255,255,0.1);
             border-radius: 10px;
             overflow: hidden;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .loading-progress {
@@ -120,8 +128,16 @@
             to { width: 100%; }
         }
 
+        .status-text {
+            font-size: 0.7rem; 
+            color: var(--cyan); 
+            letter-spacing: 2px; 
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
         .footer {
-            margin-top: 30px;
+            margin-top: 20px;
             font-size: 0.75rem;
             color: #94a3b8;
             border-top: 1px solid rgba(255,255,255,0.1);
@@ -151,7 +167,7 @@
         <div class="loading-bar-container">
             <div class="loading-progress"></div>
         </div>
-        <p style="font-size: 0.7rem; color: var(--cyan); letter-spacing: 2px;">MENGHUBUNGKAN KE SERVER...</p>
+        <p class="status-text">Menghubungkan ke Sistem Pengawasan...</p>
 
         <div class="footer">
             Dikembangkan oleh:<br>
