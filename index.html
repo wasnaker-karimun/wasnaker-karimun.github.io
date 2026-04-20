@@ -14,7 +14,6 @@
             --deep-navy: #060b13;
             --cyan: #00fff2;
             --gold: #facc15;
-            --glass: rgba(0, 255, 242, 0.05);
         }
 
         body {
@@ -55,17 +54,18 @@
             max-width: 650px;
             text-align: center;
             z-index: 1;
-            box-shadow: 0 0 20px rgba(0, 255, 242, 0.1);
+            box-shadow: 0 0 30px rgba(0, 255, 242, 0.15);
         }
 
         .logo-provinsi {
-            width: 100px;
+            width: 110px; /* Ukuran sedikit diperbesar agar lebih jelas */
             height: auto;
             margin-bottom: 25px;
             display: block;
             margin-left: auto;
             margin-right: auto;
-            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.5));
+            /* Efek glow putih di sekitar logo agar kontras di background gelap */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
         }
 
         .header-title {
@@ -136,7 +136,7 @@
 <body>
 
     <div class="card">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/e/e0/Coat_of_arms_of_Riau_Islands.png" alt="Logo Kepri" class="logo-provinsi">
+        <img src="https://lh3.googleusercontent.com/d/1_WHKaXVe3ncNvPTbcC3Patsrt-Oqtc9i" alt="Logo Kepri" class="logo-provinsi">
         
         <h1 class="header-title">LAPOR KAKAK</h1>
         
@@ -155,8 +155,7 @@
             </div>
             <div class="status-text">LOADING...</div>
         </div>
-
-    </div>
+       </div>
 
 </body>
 </html>
